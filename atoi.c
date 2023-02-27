@@ -1,10 +1,12 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h> /* isspace */
 
 int my_atoi(const char *);
+int my_isspace(int ch)
+{
+    return ch == ' ' || ch == '\f' || ch == '\n' || ch == '\r' || ch == '\t' || ch == '\v';
+}
 
 int my_atoi(const char *str)
 {
@@ -14,7 +16,7 @@ int my_atoi(const char *str)
     int i = 0;    //  文字列配列の添え字
 
     // 先頭文字が空白以外の文字列になるまで繰り返す
-    while (isspace(str[i]))
+    while (my_isspace(str[i]))
         i++;
 
     // 符号判定
