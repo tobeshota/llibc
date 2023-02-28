@@ -41,7 +41,7 @@ int main(void)
     }
 
     /* 実行結果の確認 */
-    if (strncmp(dst, "Hello! Good bye!", strlen("Hello! Good bye!")) != 0)
+    if (my_strncmp(dst, "Hello! Good bye!", strlen("Hello! Good bye!")) != 0)
     {
         /* ちゃんとコピーできてない！ */
         printf("Error2!!!\n");
