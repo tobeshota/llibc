@@ -1,40 +1,24 @@
 /* 文字列s1に文字列s2を連結させる。 */
 #include <stdio.h>
 
-size_t my_strlen(const char *);
-char *my_strcpy(char *, const char *);
 char *my_strcat(char *, const char *);
 
 char *my_strcat(char *restrict s1, const char *restrict s2)
 {
-    my_strcpy(s1 + my_strlen(s1), s2);
-    return s1;
-}
+    char *p = s1;
 
-size_t my_strlen(const char *str)
-{
-    /* 自作してください */
-    size_t len = 0;
-    // strが終端文字'\0'になるまでlenをカウント
-    while (str[len])
-        len++;
-    return len;
-}
-
-char *my_strcpy(char *dst, const char *src)
-{
-    /* 自作してください */
-    // 終端文字の直前まで1文字ずつコピー
-    int i = 0;
-    while (src[i])
+    //  s1を末尾まで進める
+    while (*s1)
+        s1++;
+    //  s2に'\0'が見つかるまでコピー
+    while (*s2)
     {
-        dst[i] = src[i];
-        i++;
+        *s1 = *s2;
+        s1++;
+        s2++;
     }
 
-    // 最後に終端文字を追加
-    dst[i] = '\0';
-    return dst;
+    return p;
 }
 
 int main(void)
