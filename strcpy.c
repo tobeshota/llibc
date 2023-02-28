@@ -49,7 +49,7 @@ int main(void)
     }
 
     /* 実行結果の確認 */
-    if (strcmp(dst, "Hello! Good bye!") != 0)
+    if (my_strcmp(dst, "Hello! Good bye!") != 0)
     {
         /* 多分文字列の最後に必要なアレが足りていない */
         printf("Error3!!!\n");
