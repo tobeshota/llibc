@@ -6,6 +6,7 @@ char *strncat(char *, const char *, size_t);
 char *strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
     char *p = s1;
+
     // s1を末尾まで進める
     while (*s1)
         s1++;
@@ -22,7 +23,7 @@ char *strncat(char *restrict s1, const char *restrict s2, size_t n)
     // s1の末尾に'\0'を入れる
     *s1 = '\0';
 
-    return 0;
+    return p;
 }
 
 int main(void)
