@@ -16,7 +16,7 @@ int my_strncmp(const char *s1, const char *s2, size_t n)
         n--;
     }
     if (!n)
-        return 0; // while文による繰り返し終了後、nが終端文字まで到達している場合、正常終了として0を返す
+        return 0; //  while文による繰り返し終了後、nが'\0'まで到達している場合、正常終了として0を返す
     if (*s1)
         return 1; //  while文による繰り返し後、s1の値が0でない（残っている）場合、1を返す
     return -1;    //  while文による繰り返し後、s2の値が0でない（残っている）場合、1を返す
